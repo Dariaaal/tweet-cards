@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "redux/user-selectors";
 import { fetchUsers } from "../../../redux/user-operations";
 import UsersList from "../../tweets/UsersList/UsersList";
-import { LoadMoreBtn } from "../../tweets/LoadMoreBtn";
+import { LoadMoreBtn } from "../../tweets/LoadMore/LoadMoreBtn";
 
 export default function TweetsPage() {
 
