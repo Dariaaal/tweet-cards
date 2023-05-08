@@ -1,7 +1,7 @@
 import React from "react";
 
-const UsersList = ({users, onClick}) => (
-<ul>
+const UsersList = ({users}) => (
+    <ul>
     {users.map(({id, user, tweets, followers, avatar}) => (
     <li key={id}>
         <img
@@ -13,10 +13,10 @@ const UsersList = ({users, onClick}) => (
         />
         <p>{tweets} Tweets</p>
         <p>{followers} Followers</p>
-        <button type="button" onClick={() => onClick(id)}>Follow</button>
+        {/* <button type="button" onClick={() => onClick(id)}>Follow</button> */}
     </li>
     ))}
-    </ul>
+    </ul> 
 );
 
 export default UsersList;

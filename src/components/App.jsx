@@ -1,7 +1,7 @@
+import Users from "./Users"
+
 export const App = () => {
   return (
-    <div>
-      <p>Hello</p>
-    </div>
+    <Users/>
   );
 };
