@@ -1,4 +1,5 @@
 import React from "react";
+import FollowBtn from "./FollowBtn";
 
 const UsersList = ({users}) => (
     <ul>
@@ -13,7 +14,7 @@ const UsersList = ({users}) => (
         />
         <p>{tweets} Tweets</p>
         <p>{followers} Followers</p>
-        {/* <button type="button" onClick={() => onClick(id)}>Follow</button> */}
+        <FollowBtn/>
     </li>
     ))}
     </ul> 
