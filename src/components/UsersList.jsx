@@ -2,6 +2,7 @@ import React from "react";
 import FollowBtn from "./FollowBtn";
 
 const UsersList = ({users}) => (
+
     <ul>
     {users.map(({id, user, tweets, followers, avatar}) => (
     <li key={id}>
@@ -14,7 +15,7 @@ const UsersList = ({users}) => (
         />
         <p>{tweets} Tweets</p>
         <p>{followers} Followers</p>
-        <FollowBtn/>
+        <FollowBtn followers={followers}/>
     </li>
     ))}
     </ul> 
