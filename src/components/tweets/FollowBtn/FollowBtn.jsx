@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import css from './FollowBtn.module.css'
 
 export default function FollowBtn ({followers}) {
     const [follow, setFollow] = useState(false);
@@ -12,5 +13,5 @@ export default function FollowBtn ({followers}) {
        }
     }
     
-    return <button type="button" onClick={OnFollowClick}>{follow? "Following" : "Follow"}</button>
+    return <div className={css.btn}><button className={css.follow} type="button" onClick={OnFollowClick}>{follow? "Following" : "Follow"}</button></div>
 }

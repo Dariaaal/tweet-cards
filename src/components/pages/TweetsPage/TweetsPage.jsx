@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "redux/user-selectors";
-import { fetchUsers } from "../../redux/user-operations";
-import UsersList from "../UsersList";
-import { LoadMoreBtn } from "../LoadMoreBtn";
+import { fetchUsers } from "../../../redux/user-operations";
+import UsersList from "../../tweets/UsersList/UsersList";
+import { LoadMoreBtn } from "../../tweets/LoadMoreBtn";
 
 export default function TweetsPage() {
 
