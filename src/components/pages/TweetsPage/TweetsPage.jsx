@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { useState } from "react";
-import { getUsers } from "redux/user-selectors";
+import { getUsers, getIsLoading } from "redux/user-selectors";
 import { fetchUsers } from "../../../redux/user-operations";
 import {UsersList} from "../../tweets/UsersList/UsersList";
 import { LoadMoreBtn } from "../../tweets/LoadMore/LoadMoreBtn";
@@ -16,6 +16,8 @@ export default function TweetsPage() {
 
     const users = useSelector(getUsers);
 
+    const isLoading = useSelector(getIsLoading);
+
     useEffect(() => {
         dispatch(fetchUsers());
       },[dispatch])
@@ -28,9 +30,10 @@ export default function TweetsPage() {
 
     return (
         <>
-        <NavLink to="/homepage" className={css.back}>Go back</NavLink>
-        <UsersList users={users} followed={users.followers}/>
-        <LoadMoreBtn/>
+        {isLoading && <p className={css.loading}>Loading...</p>}
+        {!isLoading && <NavLink to="/homepage" className={css.back}>Go back</NavLink>}
+        {!isLoading && <UsersList users={users} followed={users.followers}/>}
+        {!isLoading && <LoadMoreBtn/>}
         </>
     )
 }
