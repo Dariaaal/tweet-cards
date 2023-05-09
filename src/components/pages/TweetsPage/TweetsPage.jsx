@@ -32,7 +32,7 @@ export default function TweetsPage() {
 
     return (
         <>
-        {!isLoading && <NavLink to="/homepage" className={css.back}>Go back</NavLink>}
+        <NavLink to="/homepage" className={css.back}>Go back</NavLink>
         {!isLoading && <UsersList users={users} followed={users.followers}/>}
         {!isLoading && <LoadMoreBtn users={users} page={page} onNextPage={onNextPage} onPrevPage={onPrevPage}/>}
         {isLoading && <p className={css.loading}>Loading...</p>}
