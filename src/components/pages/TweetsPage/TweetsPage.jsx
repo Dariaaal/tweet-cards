@@ -22,16 +22,20 @@ export default function TweetsPage() {
         dispatch(fetchUsers(page));
       },[dispatch, page])
 
-    const onLoadMore = () => {
+    const onNextPage = () => {
         setPage(prev=>prev+1)
+    }
+
+    const onPrevPage = () => {
+        setPage(prev=>prev-1)
     }
 
     return (
         <>
-        {isLoading && <p className={css.loading}>Loading...</p>}
         {!isLoading && <NavLink to="/homepage" className={css.back}>Go back</NavLink>}
         {!isLoading && <UsersList users={users} followed={users.followers}/>}
-        {!isLoading && users.length > 0 && page<4 && <LoadMoreBtn onLoadMore={onLoadMore}/>}
+        {!isLoading && <LoadMoreBtn users={users} page={page} onNextPage={onNextPage} onPrevPage={onPrevPage}/>}
+        {isLoading && <p className={css.loading}>Loading...</p>}
         </>
     )
 }

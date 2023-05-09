@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <div>
       <header><AppBar/></header>
-      <Suspense fallback={'Loading...'}>
+      <Suspense>
       <Outlet />
       </Suspense>
     </div>
