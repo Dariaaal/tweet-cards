@@ -5,7 +5,7 @@ export const UsersList = ({users}) => {
   return (
             <ul className={css.list}>
             {users && users.map((user)=>(
-                <UserCard users={user}/>
+                <UserCard users={user} key={user.id}/>
             ))}
         </ul>
   )

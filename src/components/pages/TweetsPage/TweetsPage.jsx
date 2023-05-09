@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+// import { useState } from "react";
 import { getUsers } from "redux/user-selectors";
 import { fetchUsers } from "../../../redux/user-operations";
 import {UsersList} from "../../tweets/UsersList/UsersList";
@@ -10,7 +10,7 @@ import css from './TweetsPage.module.css'
 
 export default function TweetsPage() {
 
-    const [page, setPage] = useState(1);
+    // const [page, setPage] = useState(1);
 
     const dispatch = useDispatch();
 
@@ -20,17 +20,17 @@ export default function TweetsPage() {
         dispatch(fetchUsers());
       },[dispatch])
 
-    const onLoadMore = () => {
-        setPage(prev => {
-            return prev + 1;
-        });
-    }
+    // const onLoadMore = () => {
+    //     setPage(prev => {
+    //         return prev + 1;
+    //     });
+    // }
 
     return (
         <>
         <NavLink to="/homepage" className={css.back}>Go back</NavLink>
         <UsersList users={users} followed={users.followers}/>
-        <LoadMoreBtn onClick={onLoadMore}/>
+        <LoadMoreBtn/>
         </>
     )
 }
