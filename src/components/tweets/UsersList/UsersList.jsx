@@ -24,7 +24,7 @@ const UsersList = ({users}) => (
         </div>
         <div className={css.text}>
         <p>{tweets} Tweets</p>
-        <p>{followers} Followers</p>
+        <p>{new Intl.NumberFormat('en-IN').format(followers)} Followers</p>
         </div>
         <FollowBtn followers={followers}/>
     </li>

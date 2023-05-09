@@ -13,5 +13,5 @@ export default function FollowBtn ({followers}) {
        }
     }
     
-    return <div className={css.btn}><button className={css.follow} type="button" onClick={OnFollowClick}>{follow? "Following" : "Follow"}</button></div>
+    return <div className={css.btn}><button style={{ backgroundColor: follow ? '#5CD3A8' : '#EBD8FF' }} className={css.follow} type="button" onClick={OnFollowClick}>{follow? "Following" : "Follow"}</button></div>
 }
