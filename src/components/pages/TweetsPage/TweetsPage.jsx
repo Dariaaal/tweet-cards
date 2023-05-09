@@ -31,7 +31,7 @@ export default function TweetsPage() {
         {isLoading && <p className={css.loading}>Loading...</p>}
         {!isLoading && <NavLink to="/homepage" className={css.back}>Go back</NavLink>}
         {!isLoading && <UsersList users={users} followed={users.followers}/>}
-        {!isLoading && <LoadMoreBtn onLoadMore={onLoadMore}/>}
+        {!isLoading && users.length > 0 && page<4 && <LoadMoreBtn onLoadMore={onLoadMore}/>}
         </>
     )
 }
