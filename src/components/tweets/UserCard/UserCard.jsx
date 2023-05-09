@@ -28,7 +28,7 @@ export default function UserCard ({users}) {
         </div>
         <div className={css.text}>
         <p>{users.tweets} Tweets</p>
-        <p>{new Intl.NumberFormat('en-IN').format(follow? users.followers+1: users.followers)} Followers</p>
+        <p>{new Intl.NumberFormat('ja-JP').format(follow? users.followers+1: users.followers)} Followers</p>
         </div>
         <div className={css.btn}><button style={{ backgroundColor: follow ? '#5CD3A8' : '#EBD8FF' }} className={css.follow} type="button" onClick={OnFollowClick}>{follow? "Following" : "Follow"}</button></div>
     </li>
