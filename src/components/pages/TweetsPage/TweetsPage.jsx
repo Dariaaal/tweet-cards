@@ -4,6 +4,8 @@ import { getUsers } from "redux/user-selectors";
 import { fetchUsers } from "../../../redux/user-operations";
 import UsersList from "../../tweets/UsersList/UsersList";
 import { LoadMoreBtn } from "../../tweets/LoadMore/LoadMoreBtn";
+import { NavLink } from 'react-router-dom';
+import css from './TweetsPage.module.css'
 
 export default function TweetsPage() {
 
@@ -18,6 +20,7 @@ export default function TweetsPage() {
 
     return (
         <>
+        <NavLink to="/homepage" className={css.back}>Go back</NavLink>
         <UsersList users={users} followed={users.followers}/>
         <LoadMoreBtn/>
         </>
