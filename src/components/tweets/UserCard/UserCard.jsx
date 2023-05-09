@@ -8,8 +8,7 @@ export default function UserCard ({users}) {
     const [follow, setFollow] = useState(false);
 
     const OnFollowClick = () => {
-        setFollow(prevState => !prevState)
-        console.log(follow)
+        setFollow(prevState => !prevState);
      }
 
     return <>
